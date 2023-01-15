@@ -1,0 +1,112 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    height: 100%;
+    width: 100%;
+
+    font-synthesis: none;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inter var;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    height: 2px;
+    border-radius: 4px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: #fff;
+}
+
+.default-bg {
+    @apply dark:bg-black;
+}
+
+/* .default-bg {
+    @apply dark:bg-gradient-to-bl from-gray-900 via-purple-900 to-violet-600;
+} */
+
+.text-colors {
+    @apply dark:text-white text-black;
+}
+
+.default-border-b {
+    @apply border-b dark:border-neutral-800 border-neutral-300;
+}
+
+.default-border-x {
+    @apply border-x dark:border-neutral-800 border-neutral-300;
+}
+
+.default-border-r {
+    @apply border-r dark:border-neutral-800 border-neutral-300;
+}
+
+.default-border-l {
+    @apply border-l dark:border-neutral-800 border-neutral-300;
+}
+
+.default-hover {
+    @apply dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white duration-500;
+}
+
+.h4 {
+    @apply font-bold text-2xl leading-3 tracking-tight;
+}
+
+.h5 {
+    @apply font-medium;
+}
+
+.out {
+    @apply outline -outline-offset-1 outline-1 dark:outline-neutral-800 outline-neutral-300 dark:hover:outline-white hover:outline-black hover:relative;
+}
+
+.sm-mobile-flex {
+    @apply sm:flex hidden;
+}
+
+.sm-mobile-block {
+    @apply sm:block hidden;
+}
+
+.md-mobile-flex {
+    @apply md:flex hidden;
+}
+
+.md-mobile-block {
+    @apply md:block hidden;
+}
