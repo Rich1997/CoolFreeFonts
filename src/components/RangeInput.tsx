@@ -2,9 +2,9 @@ const RangeInput = (props: {
     name: string;
     min: string;
     max: string;
-    defaultValue: string;
-    onChange: () => {};
-    style: any;
+    defaultValue: string | number | readonly string[] | undefined;
+    onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    style: React.CSSProperties | undefined;
     step?: string;
 }) => {
     return (
