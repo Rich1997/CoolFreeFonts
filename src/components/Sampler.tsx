@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from 'react';
+import RangeInput from './RangeInput';
 
 const Sampler = () => {
     const [state, setState] = useState<React.CSSProperties>({
@@ -39,10 +40,8 @@ const Sampler = () => {
                                 {state.fontWeight}
                             </div>
                         </div>
-                        <input
-                            className="slider"
+                        <RangeInput
                             name="fontWeight"
-                            type="range"
                             min="100"
                             max="900"
                             defaultValue={state.fontWeight}
@@ -57,10 +56,8 @@ const Sampler = () => {
                                 {state.fontSize}
                             </div>
                         </div>
-                        <input
-                            className="slider"
+                        <RangeInput
                             name="fontSize"
-                            type="range"
                             min="12"
                             max="280"
                             defaultValue={String(state.fontSize).slice(0, -2)}
@@ -75,10 +72,8 @@ const Sampler = () => {
                                 {state.letterSpacing}
                             </div>
                         </div>
-                        <input
-                            className="slider"
+                        <RangeInput
                             name="letterSpacing"
-                            type="range"
                             min="-0.05"
                             max="0.1"
                             defaultValue={String(state.letterSpacing).slice(
