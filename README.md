@@ -1,3 +1,3 @@
 # CoolFreeFonts
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/coolfreefonts)
+Curated list of free to use fonts.
