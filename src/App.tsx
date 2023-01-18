@@ -8,6 +8,7 @@ function App() {
             <div className="text-4xl p-12">
                 <Sampler />
                 <Sampler />
+                <Sampler />
             </div>
         </div>
     );
