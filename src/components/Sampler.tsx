@@ -1,12 +1,13 @@
 import { ChangeEvent, useState } from 'react';
 import RangeInput from './RangeInput';
 
-const Sampler = () => {
+const Sampler = (props: { font: string }) => {
     const [state, setState] = useState<React.CSSProperties>({
         fontWeight: '400',
-        fontSize: '100px',
+        fontSize: '210px',
         lineHeight: 1,
         letterSpacing: '0em',
+        fontFamily: props.font,
     });
 
     function handleChange(evt: ChangeEvent<HTMLInputElement>) {
@@ -31,7 +32,7 @@ const Sampler = () => {
     return (
         <div className="p-12 out -mb-[1px]">
             <div className="flex flex-wrap items-center justify-between gap-8 pb-8">
-                <div className="h4">Inter</div>
+                <div className="h4">{props.font}</div>
                 <div className="flex-wrap gap-8 md-mobile-flex">
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">

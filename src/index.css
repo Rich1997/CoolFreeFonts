@@ -124,3 +124,12 @@ body {
 .md-mobile-block {
     @apply md:block hidden;
 }
+
+@font-face {
+    font-family: 'Rubik';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url('./assets/fonts/Rubik/Rubik-VariableFont_wght.ttf');
+}
