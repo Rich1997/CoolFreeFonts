@@ -30,7 +30,7 @@ const Sampler = (props: { font: string }) => {
     };
 
     return (
-        <div className="p-12 out -mb-[1px]">
+        <div className="p-12 out -mb-[1px] default-bg default-text">
             <div className="flex flex-wrap items-center justify-between gap-8 pb-8">
                 <div className="h4">{props.font}</div>
                 <div className="flex-wrap gap-8 md-mobile-flex">
@@ -89,7 +89,7 @@ const Sampler = (props: { font: string }) => {
                 </div>
             </div>
             <div
-                className="md-mobile-block w-full min-h-fit h-full overflow-hidden py-8 bg-transparent text-colors dark:caret-zinc-400 caret-zinc-800 focus:outline-none placeholder:dark:text-white placeholder:text-black break-all"
+                className="md-mobile-block w-full min-h-fit h-full overflow-hidden py-8 bg-transparent default-text dark:caret-zinc-400 caret-zinc-800 focus:outline-none placeholder:dark:text-white placeholder:text-black break-all"
                 style={state}
                 contentEditable
                 suppressContentEditableWarning={true}

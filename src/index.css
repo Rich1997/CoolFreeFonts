@@ -66,18 +66,18 @@ body {
 }
 
 .default-bg {
-    @apply dark:bg-black;
+    @apply dark:bg-black bg-white;
 }
 
 /* .default-bg {
     @apply dark:bg-gradient-to-bl from-gray-900 via-purple-900 to-violet-600;
 } */
 
-.text-colors {
+.default-text {
     @apply dark:text-white text-black;
 }
 
-.text-colors-alt {
+.default-text-alt {
     @apply dark:text-neutral-800 text-neutral-300;
 }
 

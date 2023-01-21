@@ -1,8 +1,11 @@
+import CircleHalfStroke from '../assets/images/icons/CircleHalfStroke';
 import Logo from '../assets/images/Logo';
+import { useTheme, Theme } from '../config/context/ThemeContext';
 
 const Navbar = () => {
+    const { theme, setTheme } = useTheme();
     return (
-        <nav className="px-12 w-full default-border-b">
+        <nav className="px-12 w-full default-bg default-text default-border-b">
             <div className="div max-w-7xl flex justify-between mx-auto">
                 <div className="pr-12 py-8 font-black tracking-tighter text-4xl flex items-center justify-center">
                     <Logo size={24} />
@@ -18,6 +21,15 @@ const Navbar = () => {
                         Serif
                     </div>
                 </div>
+                <button
+                    type="button"
+                    className="ml-4 dark:hover:text-gray-100 hover:text-black"
+                    onClick={() =>
+                        setTheme(theme === 'dark' ? Theme.light : Theme.dark)
+                    }
+                >
+                    <CircleHalfStroke size={18} />
+                </button>
             </div>
         </nav>
     );
