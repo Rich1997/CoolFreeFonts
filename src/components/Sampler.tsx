@@ -94,7 +94,7 @@ const Sampler = (props: { font: string }) => {
                 contentEditable
                 suppressContentEditableWarning={true}
             >
-                Hello world!!
+                {props.font}
             </div>
         </div>
     );
