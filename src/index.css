@@ -98,7 +98,7 @@ body {
 }
 
 .default-hover {
-    @apply dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white duration-500;
+    @apply dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white;
 }
 
 .h4 {
