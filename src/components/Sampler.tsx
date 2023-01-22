@@ -1,7 +1,9 @@
 import { ChangeEvent, useState } from 'react';
+import { useTheme } from '../config/context/ThemeContext';
 import RangeInput from './RangeInput';
 
 const Sampler = (props: { font: string }) => {
+    const { theme } = useTheme();
     const [state, setState] = useState<React.CSSProperties>({
         fontWeight: '400',
         fontSize: '210px',
@@ -22,7 +24,12 @@ const Sampler = (props: { font: string }) => {
 
     const getStyles = (value: any, min: number, max: number) => {
         return {
-            background: '#262626 linear-gradient(#fff, #fff) no-repeat',
+            backgroundImage:
+                theme === 'dark'
+                    ? 'linear-gradient(#fff, #fff)'
+                    : 'linear-gradient(#000, #000)',
+            backgroundColor: theme === 'dark' ? '#262626' : '#a3a3a3',
+            backgroundRepeat: 'no-repeat',
             backgroundSize: `${
                 ((parseFloat(value) - min) * 100) / (max - min)
             }% 100%`,
