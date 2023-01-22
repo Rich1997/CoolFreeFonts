@@ -28,7 +28,7 @@ const Sampler = (props: { font: string }) => {
                 theme === 'dark'
                     ? 'linear-gradient(#fff, #fff)'
                     : 'linear-gradient(#000, #000)',
-            backgroundColor: theme === 'dark' ? '#262626' : '#a3a3a3',
+            backgroundColor: theme === 'dark' ? '#262626' : '#d4d4d4',
             backgroundRepeat: 'no-repeat',
             backgroundSize: `${
                 ((parseFloat(value) - min) * 100) / (max - min)
