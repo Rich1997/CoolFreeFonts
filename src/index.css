@@ -110,6 +110,26 @@ body {
     @apply dark:text-neutral-800 text-neutral-300;
 }
 
+.bg-alt {
+    @apply bg-black dark:bg-white;
+}
+
+.text-alt {
+    @apply text-white dark:text-black;
+}
+
+.default-outline {
+    @apply outline -outline-offset-1 outline-1 dark:outline-neutral-800 outline-neutral-300 dark:hover:outline-white hover:outline-black hover:relative;
+}
+
+.default-outline-select {
+    @apply outline -outline-offset-1 outline-1 dark:outline-neutral-800 outline-neutral-300 dark:hover:outline-white hover:outline-black hover:relative;
+}
+
+.default-border {
+    @apply border dark:border-neutral-800 border-neutral-300;
+}
+
 .default-border-b {
     @apply border-b dark:border-neutral-800 border-neutral-300;
 }
@@ -136,10 +156,6 @@ body {
 
 .h5 {
     @apply font-medium;
-}
-
-.out {
-    @apply outline -outline-offset-1 outline-1 dark:outline-neutral-800 outline-neutral-300 dark:hover:outline-white hover:outline-black hover:relative;
 }
 
 .sm-mobile-flex {

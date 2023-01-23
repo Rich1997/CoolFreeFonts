@@ -4,6 +4,7 @@ import RangeInput from './RangeInput';
 
 const Sampler = (props: { font: string }) => {
     const { theme } = useTheme();
+    const [mode, setMode] = useState(theme);
     const [state, setState] = useState<React.CSSProperties>({
         fontWeight: '400',
         fontSize: '210px',
@@ -37,7 +38,7 @@ const Sampler = (props: { font: string }) => {
     };
 
     return (
-        <div className="p-12 out -mb-[1px] default-bg default-text">
+        <div className="p-12 default-outline -mb-[1px] default-bg default-text">
             <div className="flex flex-wrap items-center justify-between gap-8 pb-8">
                 <div className="h4">{props.font}</div>
                 <div className="flex-wrap gap-8 md-mobile-flex">
@@ -94,6 +95,9 @@ const Sampler = (props: { font: string }) => {
                         />
                     </div>
                 </div>
+                <button className="px-8 py-2 default-border default-text text-xs">
+                    Black
+                </button>
             </div>
             <div
                 className="md-mobile-block w-full min-h-fit h-full overflow-hidden py-8 bg-transparent default-text dark:caret-zinc-400 caret-zinc-800 focus:outline-none placeholder:dark:text-white placeholder:text-black break-all"
