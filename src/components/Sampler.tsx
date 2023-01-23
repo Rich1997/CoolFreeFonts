@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { useTheme } from '../config/context/ThemeContext';
+import { useTheme, Theme } from '../config/context/ThemeContext';
 import RangeInput from './RangeInput';
 
 const Sampler = (props: { font: string }) => {
@@ -95,8 +95,13 @@ const Sampler = (props: { font: string }) => {
                         />
                     </div>
                 </div>
-                <button className="px-8 py-2 default-border default-text text-xs">
-                    Black
+                <button
+                    className="px-8 py-2 default-border default-text text-xs"
+                    onClick={() =>
+                        setMode(mode === 'dark' ? Theme.light : Theme.dark)
+                    }
+                >
+                    {mode}
                 </button>
             </div>
             <div
