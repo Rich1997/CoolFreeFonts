@@ -26,19 +26,13 @@ const Sampler = (props: { font: string }) => {
     const getStyles = (value: any, min: number, max: number) => {
         return {
             backgroundImage:
-                mode === 'dark'
-                    ? theme === 'dark'
-                        ? 'linear-gradient(#fff, #fff)'
-                        : 'linear-gradient(#000, #000)'
-                    : theme === ''
+                (theme === Theme.light && mode === Theme.light) ||
+                (theme === Theme.dark && mode === Theme.dark)
                     ? 'linear-gradient(#fff, #fff)'
                     : 'linear-gradient(#000, #000)',
             backgroundColor:
-                mode === 'dark'
-                    ? theme === 'dark'
-                        ? '#262626'
-                        : '#d4d4d4'
-                    : theme === ''
+                (theme === Theme.light && mode === Theme.light) ||
+                (theme === Theme.dark && mode === Theme.dark)
                     ? '#262626'
                     : '#d4d4d4',
             backgroundRepeat: 'no-repeat',
