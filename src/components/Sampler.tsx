@@ -26,10 +26,21 @@ const Sampler = (props: { font: string }) => {
     const getStyles = (value: any, min: number, max: number) => {
         return {
             backgroundImage:
-                theme === 'dark'
+                mode === 'dark'
+                    ? theme === 'dark'
+                        ? 'linear-gradient(#fff, #fff)'
+                        : 'linear-gradient(#000, #000)'
+                    : theme === ''
                     ? 'linear-gradient(#fff, #fff)'
                     : 'linear-gradient(#000, #000)',
-            backgroundColor: theme === 'dark' ? '#262626' : '#d4d4d4',
+            backgroundColor:
+                mode === 'dark'
+                    ? theme === 'dark'
+                        ? '#262626'
+                        : '#d4d4d4'
+                    : theme === ''
+                    ? '#262626'
+                    : '#d4d4d4',
             backgroundRepeat: 'no-repeat',
             backgroundSize: `${
                 ((parseFloat(value) - min) * 100) / (max - min)
@@ -38,7 +49,13 @@ const Sampler = (props: { font: string }) => {
     };
 
     return (
-        <div className="p-12 default-outline -mb-[1px] default-bg default-text">
+        <div
+            className={`p-12 -mb-[1px] ${
+                mode === 'dark'
+                    ? 'default-outline default-bg default-text'
+                    : 'default-selected selected'
+            }`}
+        >
             <div className="flex flex-wrap items-center justify-between gap-8 pb-8">
                 <div className="h4">{props.font}</div>
                 <div className="flex-wrap gap-8 md-mobile-flex">
@@ -96,16 +113,22 @@ const Sampler = (props: { font: string }) => {
                     </div>
                 </div>
                 <button
-                    className="px-8 py-2 default-border default-text text-xs"
+                    className={`px-8 py-2 default-border text-xs ${
+                        mode === 'dark' ? 'default-text' : 'text-alt'
+                    }`}
                     onClick={() =>
                         setMode(mode === 'dark' ? Theme.light : Theme.dark)
                     }
                 >
-                    {mode}
+                    {mode === 'dark' ? 'White' : 'Black'}
                 </button>
             </div>
             <div
-                className="md-mobile-block w-full min-h-fit h-full overflow-hidden py-8 bg-transparent default-text dark:caret-zinc-400 caret-zinc-800 focus:outline-none placeholder:dark:text-white placeholder:text-black break-all"
+                className={`md-mobile-block w-full min-h-fit h-full overflow-hidden py-8 bg-transparent default-text dark:caret-zinc-400 caret-zinc-800 focus:outline-none break-all ${
+                    mode === 'dark'
+                        ? 'default-bg default-text'
+                        : 'bg-alt text-alt'
+                }`}
                 style={state}
                 contentEditable
                 suppressContentEditableWarning={true}
