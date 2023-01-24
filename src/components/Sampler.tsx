@@ -121,7 +121,7 @@ const Sampler = (props: { font: string }) => {
                             setMode(mode === 'dark' ? Theme.light : Theme.dark)
                         }
                     >
-                        {toggle === true ? 'White' : 'Black'}
+                        {toggle === false ? 'White' : 'Black'}
                     </button>
                 </div>
             </div>
