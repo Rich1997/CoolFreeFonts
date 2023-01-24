@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useTheme, Theme } from '../config/context/ThemeContext';
 import RangeInput from './RangeInput';
 
@@ -12,6 +12,11 @@ const Sampler = (props: { font: string }) => {
         letterSpacing: '0em',
         fontFamily: props.font,
     });
+    const [toggle, setToggle] = useState(true);
+
+    useEffect(() => {
+        setToggle((prevState) => !prevState);
+    }, [theme, mode]);
 
     function handleChange(evt: ChangeEvent<HTMLInputElement>) {
         let value = evt.target.value;
@@ -106,16 +111,19 @@ const Sampler = (props: { font: string }) => {
                         />
                     </div>
                 </div>
-                <button
-                    className={`px-8 py-2 default-border text-xs ${
-                        mode === 'dark' ? 'default-text' : 'text-alt'
-                    }`}
-                    onClick={() =>
-                        setMode(mode === 'dark' ? Theme.light : Theme.dark)
-                    }
-                >
-                    {mode === 'dark' ? 'White' : 'Black'}
-                </button>
+                <div className="flex items-center gap-4 text-xs">
+                    <div>Mode</div>
+                    <button
+                        className={`px-2 py-1 default-border ${
+                            mode === 'dark' ? 'default-text' : 'text-alt'
+                        }`}
+                        onClick={() =>
+                            setMode(mode === 'dark' ? Theme.light : Theme.dark)
+                        }
+                    >
+                        {toggle === true ? 'White' : 'Black'}
+                    </button>
+                </div>
             </div>
             <div
                 className={`md-mobile-block w-full min-h-fit h-full overflow-hidden py-8 bg-transparent default-text dark:caret-zinc-400 caret-zinc-800 focus:outline-none break-all ${
