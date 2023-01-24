@@ -12,7 +12,7 @@ const Sampler = (props: { font: string }) => {
         letterSpacing: '0em',
         fontFamily: props.font,
     });
-    const [toggle, setToggle] = useState(true);
+    const [toggle, setToggle] = useState(theme === 'dark' ? true : false);
 
     useEffect(() => {
         setToggle((prevState) => !prevState);
