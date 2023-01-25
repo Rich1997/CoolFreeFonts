@@ -117,7 +117,7 @@ const Sampler = (props: { font: string }) => {
                         className={`px-2 py-1 border ${
                             mode === 'dark' ? 'default-text' : 'text-alt'
                         } ${
-                            toggle === false
+                            toggle === true
                                 ? 'border-neutral-300'
                                 : 'border-neutral-800'
                         }`}
