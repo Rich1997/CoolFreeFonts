@@ -6,10 +6,11 @@ const RangeInput = (props: {
     onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
     style: React.CSSProperties | undefined;
     step?: string;
+    className?: string;
 }) => {
     return (
         <input
-            className="slider"
+            className={`slider ${props.className}`}
             name={props.name}
             type="range"
             min={props.min}
