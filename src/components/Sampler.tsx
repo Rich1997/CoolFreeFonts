@@ -118,8 +118,8 @@ const Sampler = (props: { font: string }) => {
                             mode === 'dark' ? 'default-text' : 'text-alt'
                         } ${
                             toggle === true
-                                ? 'border-neutral-300'
-                                : 'border-neutral-800'
+                                ? 'border-neutral-300 hover:border-black'
+                                : 'border-neutral-800 hover:border-white'
                         }`}
                         onClick={() =>
                             setMode(mode === 'dark' ? Theme.light : Theme.dark)
