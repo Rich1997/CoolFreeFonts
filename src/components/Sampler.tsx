@@ -66,11 +66,6 @@ const Sampler = (props: { font: string }) => {
                             </div>
                         </div>
                         <RangeInput
-                            className={`${
-                                toggle === true
-                                    ? 'slider-toggle'
-                                    : 'slider-toggle-dark'
-                            }`}
                             name="fontWeight"
                             min="100"
                             max="900"
