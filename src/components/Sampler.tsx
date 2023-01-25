@@ -114,8 +114,12 @@ const Sampler = (props: { font: string }) => {
                 <div className="flex items-center gap-4 text-xs">
                     <div>Mode</div>
                     <button
-                        className={`px-2 py-1 default-border ${
+                        className={`px-2 py-1 border ${
                             mode === 'dark' ? 'default-text' : 'text-alt'
+                        } ${
+                            toggle === false
+                                ? 'border-neutral-300 hover:border-black'
+                                : 'border-neutral-800 hover:border-white'
                         }`}
                         onClick={() =>
                             setMode(mode === 'dark' ? Theme.light : Theme.dark)
