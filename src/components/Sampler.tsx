@@ -12,10 +12,11 @@ const Sampler = (props: { font: string }) => {
         letterSpacing: '0em',
         fontFamily: props.font,
     });
-    const [toggle, setToggle] = useState(true);
+
+    const [toggle, setToggle] = useState(theme + mode);
 
     useEffect(() => {
-        setToggle((prevState) => !prevState);
+        setToggle(theme + mode);
     }, [theme, mode]);
 
     function handleChange(evt: ChangeEvent<HTMLInputElement>) {
@@ -66,6 +67,11 @@ const Sampler = (props: { font: string }) => {
                             </div>
                         </div>
                         <RangeInput
+                            className={`${
+                                toggle === 'darkdark' || toggle === 'lightlight'
+                                    ? 'slider-toggle-dark'
+                                    : 'slider-toggle'
+                            }`}
                             name="fontWeight"
                             min="100"
                             max="900"
@@ -116,16 +122,19 @@ const Sampler = (props: { font: string }) => {
                     <button
                         className={`px-2 py-1 border ${
                             mode === 'dark' ? 'default-text' : 'text-alt'
-                        } ${
-                            toggle === true
-                                ? 'border-neutral-300 hover:border-black'
-                                : 'border-neutral-800 hover:border-white'
+                        }
+                        ${
+                            toggle === 'darkdark' || toggle === 'lightlight'
+                                ? 'border-neutral-800 hover:border-white'
+                                : 'border-neutral-300 hover:border-black'
                         }`}
                         onClick={() =>
                             setMode(mode === 'dark' ? Theme.light : Theme.dark)
                         }
                     >
-                        {toggle === false ? 'White' : 'Black'}
+                        {toggle === 'darkdark' || toggle === 'lightlight'
+                            ? 'White'
+                            : 'Black'}
                     </button>
                 </div>
             </div>
