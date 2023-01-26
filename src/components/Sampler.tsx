@@ -88,6 +88,11 @@ const Sampler = (props: { font: string }) => {
                             </div>
                         </div>
                         <RangeInput
+                            className={`${
+                                toggle === 'darkdark' || toggle === 'lightlight'
+                                    ? 'slider-toggle-dark'
+                                    : 'slider-toggle'
+                            }`}
                             name="fontSize"
                             min="12"
                             max="280"
@@ -104,6 +109,11 @@ const Sampler = (props: { font: string }) => {
                             </div>
                         </div>
                         <RangeInput
+                            className={`${
+                                toggle === 'darkdark' || toggle === 'lightlight'
+                                    ? 'slider-toggle-dark'
+                                    : 'slider-toggle'
+                            }`}
                             name="letterSpacing"
                             min="-0.05"
                             max="0.1"
