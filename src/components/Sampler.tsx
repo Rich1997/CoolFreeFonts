@@ -50,10 +50,10 @@ const Sampler = (props: { font: string }) => {
 
     return (
         <div
-            className={`p-12 -mb-[1px] ${
+            className={`md:p-12 py-12 px-6 -mb-[1px] ${
                 mode === 'dark'
                     ? 'default-outline default-bg default-text'
-                    : 'default-selected selected'
+                    : 'default-selected'
             }`}
         >
             <div className="flex flex-wrap items-center justify-between gap-8 pb-8">

@@ -36,28 +36,6 @@ body {
     border-radius: 4px;
 }
 
-/* .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    background: rgb(255, 255, 255);
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.dark .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    background: #000;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    cursor: pointer;
-} */
-
 .slider-toggle::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -145,7 +123,7 @@ body {
 }
 
 .default-outline {
-    @apply outline -outline-offset-1 outline-1 dark:outline-neutral-800 outline-neutral-300 dark:hover:outline-white hover:outline-black hover:relative;
+    @apply border-y dark:border-neutral-800 border-neutral-300 dark:hover:border-white hover:border-black md:outline -outline-offset-1 outline-1 dark:outline-neutral-800 outline-neutral-300 dark:hover:outline-white hover:outline-black hover:relative;
 }
 
 .default-border {
