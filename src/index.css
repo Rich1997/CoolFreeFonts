@@ -158,6 +158,10 @@ body {
     @apply font-medium;
 }
 
+.h5-custom {
+    @apply text-xl font-bold leading-3 tracking-tight;
+}
+
 .sm-mobile-flex {
     @apply sm:flex hidden;
 }
@@ -172,6 +176,10 @@ body {
 
 .md-mobile-block {
     @apply md:block hidden;
+}
+
+.md-mobile-block-reverse {
+    @apply block md:hidden;
 }
 
 @font-face {

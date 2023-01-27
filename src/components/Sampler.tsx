@@ -57,7 +57,7 @@ const Sampler = (props: { font: string }) => {
             }`}
         >
             <div className="flex flex-wrap items-center justify-between gap-8 pb-8">
-                <div className="h4">{props.font}</div>
+                <div className="h5-custom">{props.font}</div>
                 <div className="flex-wrap gap-8 md-mobile-flex">
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
@@ -149,12 +149,31 @@ const Sampler = (props: { font: string }) => {
                 </div>
             </div>
             <div
-                className={`md-mobile-block w-full min-h-fit h-full overflow-hidden py-8 bg-transparent default-text dark:caret-zinc-400 caret-zinc-800 focus:outline-none break-all ${
+                className={`md-mobile-block w-full min-h-fit h-full overflow-hidden py-8 bg-transparent default-text focus:outline-none break-all ${
                     mode === 'dark'
                         ? 'default-bg default-text'
                         : 'bg-alt text-alt'
+                } ${
+                    toggle === 'darkdark' || toggle === 'lightlight'
+                        ? 'caret-zinc-400'
+                        : 'caret-zinc-800'
                 }`}
                 style={state}
+                contentEditable
+                suppressContentEditableWarning={true}
+            >
+                {props.font}
+            </div>
+            <div
+                className={`text-md md-mobile-block-reverse w-full min-h-fit h-full overflow-hidden bg-transparent default-text focus:outline-none break-all ${
+                    mode === 'dark'
+                        ? 'default-bg default-text'
+                        : 'bg-alt text-alt'
+                } ${
+                    toggle === 'darkdark' || toggle === 'lightlight'
+                        ? 'caret-zinc-400'
+                        : 'caret-zinc-800'
+                }`}
                 contentEditable
                 suppressContentEditableWarning={true}
             >
