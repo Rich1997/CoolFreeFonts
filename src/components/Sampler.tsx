@@ -62,7 +62,7 @@ const Sampler = (props: { font: string }) => {
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
                             <div className="text-xs text-right">Weight</div>
-                            <div className="text-xs text-right">
+                            <div className="text-xs text-right w-8">
                                 {state.fontWeight}
                             </div>
                         </div>
@@ -83,7 +83,7 @@ const Sampler = (props: { font: string }) => {
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
                             <div className="text-xs text-right">Size</div>
-                            <div className="text-xs text-right">
+                            <div className="text-xs text-right w-10">
                                 {state.fontSize}
                             </div>
                         </div>
@@ -104,7 +104,7 @@ const Sampler = (props: { font: string }) => {
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
                             <div className="text-xs text-right">Tracking</div>
-                            <div className="text-xs text-right">
+                            <div className="text-xs text-right w-14">
                                 {state.letterSpacing}
                             </div>
                         </div>
