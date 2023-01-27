@@ -161,6 +161,7 @@ const Sampler = (props: { font: string }) => {
                 style={state}
                 contentEditable
                 suppressContentEditableWarning={true}
+                spellCheck={false}
             >
                 {props.font}
             </div>
@@ -176,6 +177,7 @@ const Sampler = (props: { font: string }) => {
                 }`}
                 contentEditable
                 suppressContentEditableWarning={true}
+                spellCheck={false}
             >
                 {props.font}
             </div>
