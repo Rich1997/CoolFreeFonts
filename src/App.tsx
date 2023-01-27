@@ -8,7 +8,7 @@ function App() {
         <div className={`${theme}`}>
             <div className="default-bg default-text w-full min-h-screen h-full">
                 <Navbar />
-                <div className="default-bg default-text text-4xl md:p-12 py-12 px-6">
+                <div className="default-bg default-text text-4xl md:p-12 py-12">
                     <Sampler font="Rubik" minWeight={300} maxWeight={900} />
                     <Sampler font="Inter" minWeight={100} maxWeight={900} />
                     <Sampler font="Rubik" minWeight={300} maxWeight={900} />
