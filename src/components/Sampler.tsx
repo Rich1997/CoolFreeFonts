@@ -2,12 +2,16 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { useTheme, Theme } from '../config/context/ThemeContext';
 import RangeInput from './RangeInput';
 
-const Sampler = (props: { font: string }) => {
+const Sampler = (props: {
+    font: string;
+    minWeight: number;
+    maxWeight: number;
+}) => {
     const { theme } = useTheme();
     const [mode, setMode] = useState(theme);
     const [state, setState] = useState<React.CSSProperties>({
-        fontWeight: '400',
-        fontSize: '210px',
+        fontWeight: String(props.minWeight + 200),
+        fontSize: '128px',
         lineHeight: 1,
         letterSpacing: '0em',
         fontFamily: props.font,
@@ -73,11 +77,15 @@ const Sampler = (props: { font: string }) => {
                                     : 'slider-toggle'
                             }`}
                             name="fontWeight"
-                            min="100"
-                            max="900"
+                            min={props.minWeight}
+                            max={props.maxWeight}
                             defaultValue={state.fontWeight}
                             onChange={handleChange}
-                            style={getStyles(state.fontWeight, 100, 900)}
+                            style={getStyles(
+                                state.fontWeight,
+                                props.minWeight,
+                                props.maxWeight
+                            )}
                         />
                     </div>
                     <div className="flex items-center gap-4">

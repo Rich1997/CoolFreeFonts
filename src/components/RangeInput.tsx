@@ -1,7 +1,7 @@
 const RangeInput = (props: {
     name: string;
-    min: string;
-    max: string;
+    min: number;
+    max: number;
     defaultValue: string | number | readonly string[] | undefined;
     onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
     style: React.CSSProperties | undefined;
