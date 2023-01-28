@@ -119,7 +119,7 @@ body {
 }
 
 .default-selected {
-    @apply border-y dark:border-white border-black bg-black dark:bg-white text-white dark:text-black outline -outline-offset-1 outline-1 outline-neutral-800 dark:outline-neutral-300;
+    @apply border-y bg-black dark:bg-white text-white dark:text-black border-b border-neutral-800 dark:border-neutral-300;
 }
 
 .default-outline {
