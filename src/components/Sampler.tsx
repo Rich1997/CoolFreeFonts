@@ -54,7 +54,7 @@ const Sampler = (props: {
 
     return (
         <div
-            className={`md:p-12 py-12 px-6 -mb-[1px] ${
+            className={`md:p-12 p-6 -mb-[1px] ${
                 mode === 'dark'
                     ? 'default-outline default-bg default-text'
                     : 'default-selected'
@@ -135,24 +135,41 @@ const Sampler = (props: {
                         />
                     </div>
                 </div>
-                <div className="flex items-center gap-4 text-xs">
-                    <div>Mode</div>
+                <div className="flex flex-wrap items-center gap-4 text-xs">
+                    <div className="w-24">Color mode</div>
                     <button
-                        className={`px-2 py-1 border ${
-                            mode === 'dark' ? 'default-text' : 'text-alt'
-                        }
-                        ${
+                        className={`${
                             toggle === 'darkdark' || toggle === 'lightlight'
-                                ? 'border-neutral-800 hover:border-white'
-                                : 'border-neutral-300 hover:border-black'
+                                ? 'text-neutral-600'
+                                : 'text-black'
                         }`}
+                        disabled={
+                            toggle === 'lightdark' || toggle === 'darklight'
+                                ? true
+                                : false
+                        }
                         onClick={() =>
                             setMode(mode === 'dark' ? Theme.light : Theme.dark)
                         }
                     >
-                        {toggle === 'darkdark' || toggle === 'lightlight'
-                            ? 'White'
-                            : 'Black'}
+                        White
+                    </button>
+                    <button
+                        className={`${
+                            toggle === 'darkdark' || toggle === 'lightlight'
+                                ? 'text-white'
+                                : 'text-neutral-400'
+                        }`}
+                        disabled={
+                            toggle === 'lightdark' || toggle === 'darklight'
+                                ? false
+                                : true
+                        }
+                        onClick={() =>
+                            setMode(mode === 'dark' ? Theme.light : Theme.dark)
+                        }
+                    >
+                        Black
                     </button>
                 </div>
             </div>
@@ -174,7 +191,7 @@ const Sampler = (props: {
                 {props.font}
             </div>
             <div
-                className={`text-md md-mobile-block-reverse w-full min-h-fit h-full overflow-hidden bg-transparent default-text focus:outline-none break-all ${
+                className={`py-4 text-md md-mobile-block-reverse w-full min-h-fit h-full overflow-hidden bg-transparent default-text focus:outline-none break-all ${
                     mode === 'dark'
                         ? 'default-bg default-text'
                         : 'bg-alt text-alt'
