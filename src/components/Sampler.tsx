@@ -60,13 +60,13 @@ const Sampler = (props: {
                     : 'default-selected'
             }`}
         >
-            <div className="flex flex-wrap items-center justify-between gap-8 pb-8">
+            <div className="flex flex-wrap items-center justify-between gap-8 pb-8 text-xs">
                 <div className="h5-custom">{props.font}</div>
                 <div className="flex-wrap gap-8 md-mobile-flex">
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
-                            <div className="text-xs text-right">Weight</div>
-                            <div className="text-xs text-right w-8">
+                            <div className="text-right">Weight</div>
+                            <div className="text-right w-8">
                                 {state.fontWeight}
                             </div>
                         </div>
@@ -90,8 +90,8 @@ const Sampler = (props: {
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
-                            <div className="text-xs text-right">Size</div>
-                            <div className="text-xs text-right w-10">
+                            <div className="text-right">Size</div>
+                            <div className="text-right w-10">
                                 {state.fontSize}
                             </div>
                         </div>
@@ -111,8 +111,8 @@ const Sampler = (props: {
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
-                            <div className="text-xs text-right">Tracking</div>
-                            <div className="text-xs text-right w-14">
+                            <div className="text-right">Tracking</div>
+                            <div className="text-right w-14">
                                 {state.letterSpacing}
                             </div>
                         </div>
@@ -205,6 +205,11 @@ const Sampler = (props: {
                 spellCheck={false}
             >
                 {props.font}
+            </div>
+            <div className="flex flex-wrap gap-4 items-center justify-between pt-8 text-xs">
+                <div>Open Source</div>
+                <div>Edit</div>
+                <div>Download</div>
             </div>
         </div>
     );
