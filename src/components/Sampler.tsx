@@ -23,6 +23,11 @@ const Sampler = (props: {
         setToggle(theme + mode);
     }, [theme, mode]);
 
+    function toggleState(ifTrue: string, ifFalse: string) {
+        if (toggle === 'darkdark' || toggle === 'lightlight') return ifTrue;
+        else return ifFalse;
+    }
+
     function handleChange(evt: ChangeEvent<HTMLInputElement>) {
         let value = evt.target.value;
         if (evt.target.name === 'fontSize') value += 'px';
@@ -71,11 +76,10 @@ const Sampler = (props: {
                             </div>
                         </div>
                         <RangeInput
-                            className={`${
-                                toggle === 'darkdark' || toggle === 'lightlight'
-                                    ? 'slider-toggle-dark'
-                                    : 'slider-toggle'
-                            }`}
+                            className={`${toggleState(
+                                'slider-toggle-dark',
+                                'slider-toggle'
+                            )}`}
                             name="fontWeight"
                             min={props.minWeight}
                             max={props.maxWeight}
@@ -96,11 +100,10 @@ const Sampler = (props: {
                             </div>
                         </div>
                         <RangeInput
-                            className={`${
-                                toggle === 'darkdark' || toggle === 'lightlight'
-                                    ? 'slider-toggle-dark'
-                                    : 'slider-toggle'
-                            }`}
+                            className={`${toggleState(
+                                'slider-toggle-dark',
+                                'slider-toggle'
+                            )}`}
                             name="fontSize"
                             min="12"
                             max="280"
@@ -117,11 +120,10 @@ const Sampler = (props: {
                             </div>
                         </div>
                         <RangeInput
-                            className={`${
-                                toggle === 'darkdark' || toggle === 'lightlight'
-                                    ? 'slider-toggle-dark'
-                                    : 'slider-toggle'
-                            }`}
+                            className={`${toggleState(
+                                'slider-toggle-dark',
+                                'slider-toggle'
+                            )}`}
                             name="letterSpacing"
                             min="-0.05"
                             max="0.1"
@@ -138,11 +140,10 @@ const Sampler = (props: {
                 <div className="flex flex-wrap items-center gap-4 text-xs">
                     <div className="w-24">Color mode</div>
                     <button
-                        className={`${
-                            toggle === 'darkdark' || toggle === 'lightlight'
-                                ? 'text-neutral-600'
-                                : 'text-black'
-                        }`}
+                        className={`${toggleState(
+                            'text-neutral-600',
+                            'text-black'
+                        )}`}
                         disabled={
                             toggle === 'lightdark' || toggle === 'darklight'
                                 ? true
@@ -155,11 +156,10 @@ const Sampler = (props: {
                         White
                     </button>
                     <button
-                        className={`${
-                            toggle === 'darkdark' || toggle === 'lightlight'
-                                ? 'text-white'
-                                : 'text-neutral-400'
-                        }`}
+                        className={`${toggleState(
+                            'text-white',
+                            'text-neutral-400'
+                        )}`}
                         disabled={
                             toggle === 'lightdark' || toggle === 'darklight'
                                 ? false
@@ -178,11 +178,7 @@ const Sampler = (props: {
                     mode === 'dark'
                         ? 'default-bg default-text'
                         : 'bg-alt text-alt'
-                } ${
-                    toggle === 'darkdark' || toggle === 'lightlight'
-                        ? 'caret-zinc-400'
-                        : 'caret-zinc-800'
-                }`}
+                } ${toggleState('caret-zinc-400', 'caret-zinc-800')}`}
                 style={state}
                 contentEditable
                 suppressContentEditableWarning={true}
@@ -195,11 +191,7 @@ const Sampler = (props: {
                     mode === 'dark'
                         ? 'default-bg default-text'
                         : 'bg-alt text-alt'
-                } ${
-                    toggle === 'darkdark' || toggle === 'lightlight'
-                        ? 'caret-zinc-400'
-                        : 'caret-zinc-800'
-                }`}
+                } ${toggleState('caret-zinc-400', 'caret-zinc-800')}`}
                 contentEditable
                 suppressContentEditableWarning={true}
                 spellCheck={false}
