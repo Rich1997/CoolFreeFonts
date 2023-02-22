@@ -5,7 +5,7 @@ import { useTheme, Theme } from '../config/context/ThemeContext';
 const Navbar = () => {
     const { theme, setTheme } = useTheme();
     return (
-        <nav className="px-12 w-full default-bg default-text default-border-b">
+        <nav className="md:px-12 px-6 w-full default-bg default-text default-border-b">
             <div className="md:p-0 py-6 div max-w-7xl flex gap-8 items-center justify-between mx-auto">
                 <Logo size={24} />
                 <div className="items-center justify-center default-border-l h5 md-mobile-flex">
