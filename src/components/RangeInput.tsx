@@ -1,4 +1,4 @@
-const RangeInput = (props: {
+type RangeInputProps = {
     name: string;
     min: string | number;
     max: string | number;
@@ -7,10 +7,13 @@ const RangeInput = (props: {
     style: React.CSSProperties | undefined;
     step?: string;
     className?: string;
-}) => {
+    width?: string;
+};
+
+const RangeInput = (props: RangeInputProps) => {
     return (
         <input
-            className={`slider ${props.className}`}
+            className={`${props.width} slider ${props.className}`}
             name={props.name}
             type="range"
             min={props.min}
