@@ -1,13 +1,11 @@
 import RangeInput from './RangeInput';
 import { useTheme, Theme } from '../config/context/ThemeContext';
 import { ChangeEvent, useState } from 'react';
+import { Settings, useSettings } from '../config/context/SettingsContext';
 
 const SettingsPanel = () => {
     const { theme } = useTheme();
-    const [state, setState] = useState({
-        size: '128px',
-        weight: '',
-    });
+    const { settings, setSize } = useSettings();
 
     function toggleState(ifTrue: string, ifFalse: string) {
         if (theme === 'dark') return ifTrue;
@@ -17,10 +15,7 @@ const SettingsPanel = () => {
     function handleChange(evt: ChangeEvent<HTMLInputElement>) {
         let value = evt.target.value;
         if (evt.target.name === 'size') value += 'px';
-        setState({
-            ...state,
-            [evt.target.name]: value,
-        });
+        setSize(value);
     }
 
     const getStyles = (value: any, min: number, max: number) => {
@@ -39,7 +34,7 @@ const SettingsPanel = () => {
 
     return (
         <div className="md:block hidden p-12 h-12 w-full">
-            {state.size}
+            {settings.fontSize}
             <RangeInput
                 width="w-96"
                 className={`${toggleState(
@@ -49,12 +44,16 @@ const SettingsPanel = () => {
                 name="size"
                 min={12}
                 max={280}
-                defaultValue={128}
+                defaultValue={String(settings.fontSize).slice(0, -2)}
                 onChange={handleChange}
-                style={getStyles(state.size, 12, 280)}
+                style={getStyles(settings.fontSize, 12, 280)}
             />
         </div>
     );
 };
 
 export default SettingsPanel;
+
+function useEffect(arg0: () => void, arg1: any[]) {
+    throw new Error('Function not implemented.');
+}

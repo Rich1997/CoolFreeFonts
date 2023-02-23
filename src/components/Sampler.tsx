@@ -1,4 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react';
+import { useSettings } from '../config/context/SettingsContext';
 import { useTheme, Theme } from '../config/context/ThemeContext';
 import RangeInput from './RangeInput';
 
@@ -8,10 +9,11 @@ const Sampler = (props: {
     maxWeight: number;
 }) => {
     const { theme } = useTheme();
+    const { settings, setSize } = useSettings();
     const [mode, setMode] = useState(theme);
     const [state, setState] = useState<React.CSSProperties>({
         fontWeight: String(props.minWeight + 200),
-        fontSize: '128px',
+        fontSize: settings.fontSize,
         lineHeight: 1,
         letterSpacing: '0em',
         fontFamily: props.font,
@@ -22,6 +24,10 @@ const Sampler = (props: {
     useEffect(() => {
         setToggle(theme + mode);
     }, [theme, mode]);
+
+    useEffect(() => {
+        setState({ ...state, fontSize: settings.fontSize });
+    }, [settings]);
 
     function toggleState(ifTrue: string, ifFalse: string) {
         if (toggle === 'darkdark' || toggle === 'lightlight') return ifTrue;
