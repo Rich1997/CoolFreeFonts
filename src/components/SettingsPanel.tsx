@@ -1,7 +1,7 @@
 import RangeInput from './RangeInput';
 import { useTheme, Theme } from '../config/context/ThemeContext';
-import { ChangeEvent, useState } from 'react';
-import { Settings, useSettings } from '../config/context/SettingsContext';
+import { ChangeEvent } from 'react';
+import { useSettings } from '../config/context/SettingsContext';
 
 const SettingsPanel = () => {
     const { theme } = useTheme();
@@ -53,7 +53,3 @@ const SettingsPanel = () => {
 };
 
 export default SettingsPanel;
-
-function useEffect(arg0: () => void, arg1: any[]) {
-    throw new Error('Function not implemented.');
-}
