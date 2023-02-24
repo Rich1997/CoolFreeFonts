@@ -113,7 +113,6 @@ const Sampler = (props: {
                             name="fontSize"
                             min="12"
                             max="280"
-                            defaultValue={String(state.fontSize).slice(0, -2)}
                             onChange={handleChange}
                             value={
                                 settings.fontSize === state.fontSize
@@ -124,7 +123,6 @@ const Sampler = (props: {
                             }
                             style={getStyles(state.fontSize, 12, 280)}
                         />
-                        {settings.fontSize}
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">

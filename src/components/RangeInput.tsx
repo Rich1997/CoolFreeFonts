@@ -2,9 +2,9 @@ type RangeInputProps = {
     name: string;
     min: string | number;
     max: string | number;
-    defaultValue: string | number | readonly string[] | undefined;
     onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
     style: React.CSSProperties | undefined;
+    defaultValue?: string | number | readonly string[] | undefined;
     step?: string;
     className?: string;
     width?: string;
