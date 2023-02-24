@@ -8,6 +8,7 @@ type RangeInputProps = {
     step?: string;
     className?: string;
     width?: string;
+    value?: number | undefined;
 };
 
 const RangeInput = (props: RangeInputProps) => {
@@ -22,6 +23,7 @@ const RangeInput = (props: RangeInputProps) => {
             onChange={props.onChange}
             style={props.style}
             step={props.step}
+            value={props.value}
         />
     );
 };
