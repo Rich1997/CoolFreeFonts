@@ -33,21 +33,26 @@ const SettingsPanel = () => {
     };
 
     return (
-        <div className="md:block hidden p-12 h-12 w-full">
-            {settings.fontSize}
-            <RangeInput
-                width="w-96"
-                className={`${toggleState(
-                    'slider-toggle-dark',
-                    'slider-toggle'
-                )}`}
-                name="size"
-                min={12}
-                max={280}
-                defaultValue={String(settings.fontSize).slice(0, -2)}
-                onChange={handleChange}
-                style={getStyles(settings.fontSize, 12, 280)}
-            />
+        <div className="md:block hidden px-12 pt-12 w-full">
+            <div className="h-[1px] dark:bg-neutral-800 bg-neutral-300 w-full"></div>
+            <div className="flex items-center gap-4 py-4">
+                <div className="">Font size</div>
+                <div className="flex w-14 justify-end">{settings.fontSize}</div>
+                <RangeInput
+                    width="w-96"
+                    className={`${toggleState(
+                        'slider-toggle-dark',
+                        'slider-toggle'
+                    )}`}
+                    name="size"
+                    min={12}
+                    max={280}
+                    defaultValue={String(settings.fontSize).slice(0, -2)}
+                    onChange={handleChange}
+                    style={getStyles(settings.fontSize, 12, 280)}
+                />
+            </div>
+            <div className="h-[1px] dark:bg-neutral-800 bg-neutral-300 w-full"></div>
         </div>
     );
 };
