@@ -157,6 +157,10 @@ body {
     @apply font-medium;
 }
 
+.h5-bold {
+    @apply font-bold;
+}
+
 .h5-custom {
     @apply text-base font-bold leading-3 tracking-tight;
 }

@@ -1,4 +1,7 @@
 import { ChangeEvent, useEffect, useState } from 'react';
+import FontSize from '../assets/images/icons/FontSize';
+import FontWeight from '../assets/images/icons/FontWeight';
+import LetterSpacing from '../assets/images/icons/LetterSpacing';
 import { useSettings } from '../config/context/SettingsContext';
 import { useTheme, Theme } from '../config/context/ThemeContext';
 import RangeInput from './RangeInput';
@@ -75,9 +78,12 @@ const Sampler = (props: {
                 <div className="h5-custom">{props.font}</div>
                 <div className="flex-wrap gap-8 md-mobile-flex">
                     <div className="flex items-center gap-4">
-                        <div className="flex gap-4">
-                            <div className="text-right">Weight</div>
-                            <div className="text-right w-8">
+                        <div className="flex gap-4 items-center">
+                            <div className="flex gap-2 items-center h5-bold">
+                                <FontWeight size={16} />
+                                Weight
+                            </div>
+                            <div className="text-right w-7">
                                 {state.fontWeight}
                             </div>
                         </div>
@@ -100,7 +106,10 @@ const Sampler = (props: {
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
-                            <div className="text-right">Size</div>
+                            <div className="flex gap-2 items-center h5-bold">
+                                <FontSize size={16} />
+                                Size
+                            </div>
                             <div className="text-right w-10">
                                 {state.fontSize}
                             </div>
@@ -126,8 +135,11 @@ const Sampler = (props: {
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
-                            <div className="text-right">Tracking</div>
-                            <div className="text-right w-14">
+                            <div className="flex gap-2 items-center h5-bold">
+                                <LetterSpacing size={12} />
+                                Tracking
+                            </div>
+                            <div className="text-right w-12">
                                 {state.letterSpacing}
                             </div>
                         </div>
@@ -150,7 +162,7 @@ const Sampler = (props: {
                     </div>
                 </div>
                 <div className="flex flex-wrap items-center gap-4 text-xs">
-                    <div className="w-24">Color mode</div>
+                    <div className="w-24 h5-bold">Color mode</div>
                     <button
                         className={`${toggleState(
                             'text-neutral-600',
