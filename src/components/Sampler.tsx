@@ -80,7 +80,7 @@ const Sampler = (props: {
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4 items-center">
                             <div className="flex gap-2 items-center h5-bold">
-                                <FontWeight size={16} />
+                                <FontWeight size={10} />
                                 Weight
                             </div>
                             <div className="text-right w-7">
@@ -107,7 +107,7 @@ const Sampler = (props: {
                     <div className="flex items-center gap-4">
                         <div className="flex gap-4">
                             <div className="flex gap-2 items-center h5-bold">
-                                <FontSize size={16} />
+                                <FontSize size={10} />
                                 Size
                             </div>
                             <div className="text-right w-10">

@@ -1,12 +1,11 @@
 const FontSize = (props: { size: number }) => (
     <svg
-        xmlns="http://www.w3.org/2000/svg"
         height={props.size}
-        viewBox="0 0 24 24"
+        viewBox="0 0 19 15"
         fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
     >
-        <path d="M0 0h24v24H0z" fill="none" />
-        <path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z" />
+        <path d="M6 0V3H11V15H14V3H19V0H6ZM0 8H3V15H6V8H9V5H0V8Z" />
     </svg>
 );
 export default FontSize;
