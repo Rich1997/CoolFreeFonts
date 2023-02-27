@@ -1,11 +1,10 @@
 {
     "name": "vite-react-typescript-starter",
-    "homepage": "https://rich1997.github.io/CoolFreeFonts/",
     "private": true,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "start": "react-scripts start",
+        "start": "npx http-server ./dist",
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview"
