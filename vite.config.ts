@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ command }) => {
     const isGitHubPages =
         command === 'build' &&
-        process.env.PUBLIC_URL === 'https://rich1997.github.io/CoolFreeFonts';
+        process.env.PUBLIC_URL === 'https://rich1997.github.io/CoolFreeFonts/';
 
     return {
         plugins: [react()],
