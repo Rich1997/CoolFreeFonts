@@ -9,6 +9,11 @@ export default defineConfig(({ command }) => {
 
     return {
         plugins: [react()],
-        base: '/CoolFreeFonts/',
+        define: {
+            'process.env': {
+                PUBLIC_URL: JSON.stringify(process.env.PUBLIC_URL || ''),
+            },
+        },
+        base: isGitHubPages ? '/CoolFreeFonts/' : '/',
     };
 });
