@@ -5,15 +5,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ command }) => {
     const isGitHubPages =
         command === 'build' &&
-        process.env.PUBLIC_URL === 'https://rich1997.github.io/CoolFreeFonts/';
+        window.location.hostname === 'rich1997.github.io';
+    const base = isGitHubPages ? '/CoolFreeFonts/' : '/';
 
     return {
         plugins: [react()],
-        define: {
-            'process.env': {
-                PUBLIC_URL: JSON.stringify(process.env.PUBLIC_URL || ''),
-            },
-        },
-        base: isGitHubPages ? '/CoolFreeFonts/' : '/',
+        base,
     };
 });
