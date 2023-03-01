@@ -9,7 +9,6 @@ export default defineConfig(({ command }) => {
 
     return {
         plugins: [react()],
-        base: isGitHubPages ? '/CoolFreeFonts/' : '/',
-        assetsDir: isGitHubPages ? 'CoolFreeFonts/assets' : 'assets',
+        base: '/CoolFreeFonts/',
     };
 });
