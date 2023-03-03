@@ -181,7 +181,7 @@ const Sampler = (props: {
                     </button>
                     <button
                         className={`${toggleState(
-                            'text-white',
+                            'text-primary-light',
                             'text-neutral-400'
                         )}`}
                         disabled={
