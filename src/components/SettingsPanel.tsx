@@ -1,12 +1,37 @@
 import RangeInput from './RangeInput';
 import { useTheme, Theme } from '../config/context/ThemeContext';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useSettings } from '../config/context/SettingsContext';
 import CircleHalfStroke from '../assets/images/icons/CircleHalfStroke';
 
 const SettingsPanel = () => {
     const { theme, setTheme } = useTheme();
     const { settings, setSize } = useSettings();
+    const ref = useRef<HTMLDivElement>(null);
+    const [isSticky, setIsSticky] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsSticky(entry.isIntersecting ? false : true);
+            },
+            {
+                root: null,
+                rootMargin: '0px',
+                threshold: 1,
+            }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, [ref]);
 
     function toggleState(ifTrue: string, ifFalse: string) {
         if (theme === 'dark') return ifTrue;
@@ -37,38 +62,51 @@ const SettingsPanel = () => {
     };
 
     return (
-        <div className="md:px-12 px-0 pt-12 w-full">
-            <div className="h-[1px] dark:bg-secondary-dark bg-secondary-light w-full"></div>
-            <div className="flex items-center justify-between gap-4 py-4 md:px-0 px-6">
-                <div className="md:flex hidden items-center gap-4">
-                    <div className="">Font size</div>
-                    <div className="flex w-14 justify-end">
-                        {settings.fontSize}
+        <div className="w-full sticky top-0 default-bg z-50" ref={ref}>
+            <div className="pt-12"></div>
+            <div className="md:px-12 px-0">
+                <div className="h-[1px] dark:bg-secondary-dark bg-secondary-light w-full"></div>
+                <div className="flex items-center justify-between gap-4 py-4 md:px-0 px-6">
+                    <div className="md:flex hidden items-center gap-4">
+                        <div className="">Font size</div>
+                        <div className="flex w-14 justify-end">
+                            {settings.fontSize}
+                        </div>
+                        <button onClick={() => console.log(isSticky)}>
+                            check
+                        </button>
+                        <RangeInput
+                            width="w-96"
+                            className={`${toggleState(
+                                'slider-toggle-dark',
+                                'slider-toggle'
+                            )}`}
+                            name="size"
+                            min={12}
+                            max={280}
+                            defaultValue={String(settings.fontSize).slice(
+                                0,
+                                -2
+                            )}
+                            onChange={handleChange}
+                            style={getStyles(settings.fontSize, 12, 280)}
+                        />
                     </div>
-                    <RangeInput
-                        width="w-96"
-                        className={`${toggleState(
-                            'slider-toggle-dark',
-                            'slider-toggle'
-                        )}`}
-                        name="size"
-                        min={12}
-                        max={280}
-                        defaultValue={String(settings.fontSize).slice(0, -2)}
-                        onChange={handleChange}
-                        style={getStyles(settings.fontSize, 12, 280)}
-                    />
+                    <button
+                        type="button"
+                        onClick={() =>
+                            setTheme(
+                                theme === 'dark' ? Theme.light : Theme.dark
+                            )
+                        }
+                    >
+                        <CircleHalfStroke size={18} />
+                    </button>
                 </div>
-                <button
-                    type="button"
-                    onClick={() =>
-                        setTheme(theme === 'dark' ? Theme.light : Theme.dark)
-                    }
-                >
-                    <CircleHalfStroke size={18} />
-                </button>
             </div>
-            <div className="h-[1px] dark:bg-secondary-dark bg-secondary-light w-full"></div>
+            <div className={`${isSticky ? 'md:px-0' : 'md:px-12'} px-0`}>
+                <div className="h-[1px] dark:bg-secondary-dark bg-secondary-light w-full"></div>
+            </div>
         </div>
     );
 };
