@@ -58,7 +58,6 @@ const SettingsPanel = () => {
                 </div>
                 <button
                     type="button"
-                    className="dark:hover:text-gray-100 hover:text-black"
                     onClick={() =>
                         setTheme(theme === 'dark' ? Theme.light : Theme.dark)
                     }
@@ -66,7 +65,6 @@ const SettingsPanel = () => {
                     <CircleHalfStroke size={18} />
                 </button>
             </div>
-
             <div className="h-[1px] dark:bg-neutral-800 bg-neutral-300 w-full"></div>
         </div>
     );

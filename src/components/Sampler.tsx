@@ -166,7 +166,7 @@ const Sampler = (props: {
                     <button
                         className={`${toggleState(
                             'text-neutral-600',
-                            'text-black'
+                            'text-primary-dark'
                         )}`}
                         disabled={
                             toggle === 'lightdark' || toggle === 'darklight'
