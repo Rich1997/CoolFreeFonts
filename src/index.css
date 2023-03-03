@@ -14,8 +14,13 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
-    --primary-light: #fff;
-    --primary-dark: #000;
+    /* Main theme */
+    --primary-light: #f0f0f0;
+    --primary-dark: #101010;
+    --secondary-light: #dbdbdb;
+    --secondary-dark: #313131;
+    --tertiary-light: #8b8b8b;
+    --tertiary-dark: #6e6e6e;
 }
 
 html,
@@ -43,8 +48,8 @@ body {
     appearance: none;
     width: 12px;
     height: 12px;
-    background: rgb(255, 255, 255);
-    border: 2px solid rgb(0, 0, 0);
+    background: var(--primary-light);
+    border: 2px solid var(--primary-dark);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -55,7 +60,7 @@ body {
     width: 12px;
     height: 12px;
     background: #000;
-    border: 2px solid #fff;
+    border: 2px solid var(--primary-light);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -64,8 +69,8 @@ body {
     appearance: none;
     width: 8px;
     height: 8px;
-    background: rgb(255, 255, 255);
-    border: 2px solid rgb(0, 0, 0);
+    background: var(--primary-light);
+    border: 2px solid var(--primary-dark);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -75,25 +80,25 @@ body {
     width: 8px;
     height: 8px;
     background: #000;
-    border: 2px solid #fff;
+    border: 2px solid var(--primary-light);
     border-radius: 50%;
     cursor: pointer;
 }
 
 .slider-toggle::-webkit-slider-thumb:hover {
-    background: rgb(0, 0, 0);
+    background: var(--primary-dark);
 }
 
 .slider-toggle::-moz-range-thumb:hover {
-    background: rgb(0, 0, 0);
+    background: var(--primary-dark);
 }
 
 .slider-toggle-dark::-webkit-slider-thumb:hover {
-    background: #fff;
+    background: var(--primary-light);
 }
 
 .slider-toggle-dark::-moz-range-thumb:hover {
-    background: #fff;
+    background: var(--primary-light);
 }
 
 .default-bg {
@@ -109,7 +114,7 @@ body {
 }
 
 .default-text-alt {
-    @apply dark:text-neutral-800 text-neutral-300;
+    @apply dark:text-secondary-dark text-secondary-light;
 }
 
 .bg-alt {
@@ -121,31 +126,31 @@ body {
 }
 
 .default-selected {
-    @apply border-y bg-primary-dark dark:bg-primary-light text-primary-light dark:text-primary-dark border-b border-neutral-800 dark:border-neutral-300;
+    @apply border-y bg-primary-dark dark:bg-primary-light text-primary-light dark:text-primary-dark border-b border-secondary-dark dark:border-secondary-light;
 }
 
 .default-outline {
-    @apply border-y dark:border-neutral-800 border-neutral-300 dark:hover:border-primary-light hover:border-primary-dark md:outline -outline-offset-1 outline-1 dark:outline-neutral-800 outline-neutral-300 dark:hover:outline-primary-light hover:outline-primary-dark hover:relative;
+    @apply border-y dark:border-secondary-dark border-secondary-light dark:hover:border-primary-light hover:border-primary-dark md:outline -outline-offset-1 outline-1 dark:outline-secondary-dark outline-secondary-light dark:hover:outline-primary-light hover:outline-primary-dark hover:relative;
 }
 
 .default-border {
-    @apply border dark:border-neutral-800 border-neutral-300;
+    @apply border dark:border-secondary-dark border-secondary-light;
 }
 
 .default-border-b {
-    @apply border-b dark:border-neutral-800 border-neutral-300;
+    @apply border-b dark:border-secondary-dark border-secondary-light;
 }
 
 .default-border-x {
-    @apply border-x dark:border-neutral-800 border-neutral-300;
+    @apply border-x dark:border-secondary-dark border-secondary-light;
 }
 
 .default-border-r {
-    @apply border-r dark:border-neutral-800 border-neutral-300;
+    @apply border-r dark:border-secondary-dark border-secondary-light;
 }
 
 .default-border-l {
-    @apply border-l dark:border-neutral-800 border-neutral-300;
+    @apply border-l dark:border-secondary-dark border-secondary-light;
 }
 
 .default-hover {

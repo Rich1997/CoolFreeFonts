@@ -52,13 +52,13 @@ const Sampler = (props: {
             backgroundImage:
                 (theme === Theme.light && mode === Theme.light) ||
                 (theme === Theme.dark && mode === Theme.dark)
-                    ? 'linear-gradient(#fff, #fff)'
-                    : 'linear-gradient(#000, #000)',
+                    ? 'linear-gradient(var(--primary-light), var(--primary-light))'
+                    : 'linear-gradient(var(--primary-dark), var(--primary-dark))',
             backgroundColor:
                 (theme === Theme.light && mode === Theme.light) ||
                 (theme === Theme.dark && mode === Theme.dark)
-                    ? '#262626'
-                    : '#d4d4d4',
+                    ? 'var(--secondary-dark)'
+                    : 'var(--secondary-light)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: `${
                 ((parseFloat(value) - min) * 100) / (max - min)
@@ -165,7 +165,7 @@ const Sampler = (props: {
                     <div className="w-24 h5-bold">Color mode</div>
                     <button
                         className={`${toggleState(
-                            'text-neutral-600',
+                            'text-tertiary-dark',
                             'text-primary-dark'
                         )}`}
                         disabled={
@@ -182,7 +182,7 @@ const Sampler = (props: {
                     <button
                         className={`${toggleState(
                             'text-primary-light',
-                            'text-neutral-400'
+                            'text-tertiary-light'
                         )}`}
                         disabled={
                             toggle === 'lightdark' || toggle === 'darklight'

@@ -23,9 +23,12 @@ const SettingsPanel = () => {
         return {
             backgroundImage:
                 theme === Theme.dark
-                    ? 'linear-gradient(#fff, #fff)'
-                    : 'linear-gradient(#000, #000)',
-            backgroundColor: theme === Theme.dark ? '#262626' : '#d4d4d4',
+                    ? 'linear-gradient(var(--primary-light), var(--primary-light))'
+                    : 'linear-gradient(var(--primary-dark), var(--primary-dark))',
+            backgroundColor:
+                theme === Theme.dark
+                    ? 'var(--secondary-dark)'
+                    : 'var(--secondary-light)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: `${
                 ((parseFloat(value) - min) * 100) / (max - min)
@@ -35,7 +38,7 @@ const SettingsPanel = () => {
 
     return (
         <div className="md:px-12 px-0 pt-12 w-full">
-            <div className="h-[1px] dark:bg-neutral-800 bg-neutral-300 w-full"></div>
+            <div className="h-[1px] dark:bg-secondary-dark bg-secondary-light w-full"></div>
             <div className="flex items-center justify-between gap-4 py-4 md:px-0 px-6">
                 <div className="md:flex hidden items-center gap-4">
                     <div className="">Font size</div>
@@ -65,7 +68,7 @@ const SettingsPanel = () => {
                     <CircleHalfStroke size={18} />
                 </button>
             </div>
-            <div className="h-[1px] dark:bg-neutral-800 bg-neutral-300 w-full"></div>
+            <div className="h-[1px] dark:bg-secondary-dark bg-secondary-light w-full"></div>
         </div>
     );
 };
