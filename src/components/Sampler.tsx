@@ -77,7 +77,7 @@ const Sampler = (props: {
             <div className="flex flex-wrap items-center justify-between gap-8 pb-8 text-xs">
                 <div className="h5-custom">{props.font}</div>
                 <div className="flex-wrap gap-8 md-mobile-flex">
-                    <div className="flex items-center gap-4">
+                    <div className="flex pr-8 items-center gap-4">
                         <div className="flex gap-4 items-center">
                             <div className="flex gap-2 items-center h5-bold">
                                 <FontWeight size={10} />
@@ -104,7 +104,7 @@ const Sampler = (props: {
                             )}
                         />
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex pr-8 items-center gap-4">
                         <div className="flex gap-4">
                             <div className="flex gap-2 items-center h5-bold">
                                 <FontSize size={10} />
@@ -133,7 +133,7 @@ const Sampler = (props: {
                             style={getStyles(state.fontSize, 12, 280)}
                         />
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex pr-8 items-center gap-4">
                         <div className="flex gap-4">
                             <div className="flex gap-2 items-center h5-bold">
                                 <LetterSpacing size={12} />
