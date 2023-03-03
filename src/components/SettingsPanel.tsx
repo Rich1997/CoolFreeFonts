@@ -36,7 +36,7 @@ const SettingsPanel = () => {
     return (
         <div className="md:px-12 px-0 pt-12 w-full">
             <div className="h-[1px] dark:bg-neutral-800 bg-neutral-300 w-full"></div>
-            <div className="flex items-center justify-between gap-4 py-4">
+            <div className="flex items-center justify-between gap-4 py-4 md:px-0 px-6">
                 <div className="md:flex hidden items-center gap-4">
                     <div className="">Font size</div>
                     <div className="flex w-14 justify-end">
@@ -58,7 +58,7 @@ const SettingsPanel = () => {
                 </div>
                 <button
                     type="button"
-                    className="ml-4 dark:hover:text-gray-100 hover:text-black"
+                    className="dark:hover:text-gray-100 hover:text-black"
                     onClick={() =>
                         setTheme(theme === 'dark' ? Theme.light : Theme.dark)
                     }
