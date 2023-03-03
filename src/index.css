@@ -21,6 +21,14 @@
     --secondary-dark: #313131;
     --tertiary-light: #8b8b8b;
     --tertiary-dark: #6e6e6e;
+
+    /* Rose theme */
+    --primary-light-rose: #ffeeee;
+    --primary-dark-rose: #101010;
+    --secondary-light-rose: #e5d4d4;
+    --secondary-dark-rose: #313131;
+    --tertiary-light-rose: #8b8b8b;
+    --tertiary-dark-rose: #6e6e6e;
 }
 
 html,
