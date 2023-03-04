@@ -12,7 +12,7 @@ const Sampler = (props: {
     maxWeight: number;
 }) => {
     const { theme } = useTheme();
-    const { settings, setSize } = useSettings();
+    const { settings } = useSettings();
     const [mode, setMode] = useState(theme);
     const [state, setState] = useState<React.CSSProperties>({
         fontWeight: String(props.minWeight + 200),
