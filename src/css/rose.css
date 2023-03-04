@@ -22,7 +22,7 @@
     appearance: none;
     width: 12px;
     height: 12px;
-    background: var(--primary-light);
+    background: var(--primary-light-rose);
     border: 2px solid var(--primary-dark);
     border-radius: 50%;
     cursor: pointer;
@@ -34,7 +34,7 @@
     width: 12px;
     height: 12px;
     background: #000;
-    border: 2px solid var(--primary-light);
+    border: 2px solid var(--primary-light-rose);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -43,8 +43,8 @@
     appearance: none;
     width: 8px;
     height: 8px;
-    background: var(--primary-light);
-    border: 2px solid var(--primary-dark);
+    background: var(--primary-light-rose);
+    border: 2px solid var(--primary-dark-rose);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -54,81 +54,81 @@
     width: 8px;
     height: 8px;
     background: #000;
-    border: 2px solid var(--primary-light);
+    border: 2px solid var(--primary-light-rose);
     border-radius: 50%;
     cursor: pointer;
 }
 
 .slider-toggle::-webkit-slider-thumb:hover {
-    background: var(--primary-dark);
+    background: var(--primary-dark-rose);
 }
 
 .slider-toggle::-moz-range-thumb:hover {
-    background: var(--primary-dark);
+    background: var(--primary-dark-rose);
 }
 
 .slider-toggle-dark::-webkit-slider-thumb:hover {
-    background: var(--primary-light);
+    background: var(--primary-light-rose);
 }
 
 .slider-toggle-dark::-moz-range-thumb:hover {
-    background: var(--primary-light);
+    background: var(--primary-light-rose);
 }
 
 .default-bg {
-    @apply dark:bg-primary-dark bg-primary-light;
+    @apply dark:bg-primary-dark-rose bg-primary-light-rose;
 }
 
 .default-text {
-    @apply dark:text-primary-light text-primary-dark;
+    @apply dark:text-primary-light-rose text-primary-dark-rose;
 }
 
 .default-text-alt {
-    @apply dark:text-secondary-dark text-secondary-light;
+    @apply dark:text-secondary-dark-rose text-secondary-light-rose;
 }
 
 .bg-alt {
-    @apply bg-primary-dark dark:bg-primary-light;
+    @apply bg-primary-dark-rose dark:bg-primary-light-rose;
 }
 
 .text-alt {
-    @apply text-primary-light dark:text-primary-dark;
+    @apply text-primary-light-rose dark:text-primary-dark-rose;
 }
 
 .default-selected {
-    @apply border-y bg-primary-dark dark:bg-primary-light text-primary-light dark:text-primary-dark border-b border-secondary-dark dark:border-secondary-light;
+    @apply border-y bg-primary-dark-rose dark:bg-primary-light-rose text-primary-light-rose dark:text-primary-dark-rose border-b border-secondary-dark-rose dark:border-secondary-light-rose;
 }
 
 .default-outline {
-    @apply border-y dark:border-secondary-dark border-secondary-light dark:hover:border-primary-light hover:border-primary-dark md:outline -outline-offset-1 outline-1 dark:outline-secondary-dark outline-secondary-light dark:hover:outline-primary-light hover:outline-primary-dark hover:relative;
+    @apply border-y dark:border-secondary-dark-rose border-secondary-light-rose dark:hover:border-primary-light-rose hover:border-primary-dark-rose md:outline -outline-offset-1 outline-1 dark:outline-secondary-dark-rose outline-secondary-light-rose dark:hover:outline-primary-light-rose hover:outline-primary-dark-rose hover:relative;
 }
 
 .default-border {
-    @apply border dark:border-secondary-dark border-secondary-light;
+    @apply border dark:border-secondary-dark-rose border-secondary-light-rose;
 }
 
 .default-border-b {
-    @apply border-b dark:border-secondary-dark border-secondary-light;
+    @apply border-b dark:border-secondary-dark-rose border-secondary-light-rose;
 }
 
 .default-border-x {
-    @apply border-x dark:border-secondary-dark border-secondary-light;
+    @apply border-x dark:border-secondary-dark-rose border-secondary-light-rose;
 }
 
 .default-border-r {
-    @apply border-r dark:border-secondary-dark border-secondary-light;
+    @apply border-r dark:border-secondary-dark-rose border-secondary-light-rose;
 }
 
 .default-border-l {
-    @apply border-l dark:border-secondary-dark border-secondary-light;
+    @apply border-l dark:border-secondary-dark-rose border-secondary-light-rose;
 }
 
 .default-hover {
-    @apply dark:hover:bg-primary-light dark:hover:text-primary-dark hover:bg-primary-dark hover:text-primary-light;
+    @apply dark:hover:bg-primary-light-rose dark:hover:text-primary-dark-rose hover:bg-primary-dark-rose hover:text-primary-light-rose;
 }
 
 .hover-nav-element {
-    @apply -mr-px hover:-mb-px hover:border-b dark:hover:border-b-primary-light hover:border-b-primary-dark hover:relative;
+    @apply -mr-px hover:-mb-px hover:border-b dark:hover:border-b-primary-light-rose hover:border-b-primary-dark-rose hover:relative;
 }
 
 .h4 {

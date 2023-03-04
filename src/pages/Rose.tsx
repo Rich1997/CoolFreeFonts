@@ -1,10 +1,10 @@
-import '../css/base.css';
+import '../css/rose.css';
 
-type BaseProps = {
+type RoseProps = {
     children: React.ReactNode;
 };
 
-const Base = ({ children }: BaseProps) => {
+const Rose = ({ children }: RoseProps) => {
     return (
         <div className="default-bg default-text w-full min-h-screen h-full">
             {children}
@@ -12,4 +12,4 @@ const Base = ({ children }: BaseProps) => {
     );
 };
 
-export default Base;
+export default Rose;

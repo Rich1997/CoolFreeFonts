@@ -1,15 +1,15 @@
 import { createContext, useContext, useState } from 'react';
 
-export type SettingsType = {
+type SettingsType = {
     fontSize: string;
-};
-
-export const Settings = {
-    fontSize: '160px',
 };
 
 type SettingsContextProps = {
     children: React.ReactNode;
+};
+
+export const Settings = {
+    fontSize: '160px',
 };
 
 export type SettingsContextType = {
