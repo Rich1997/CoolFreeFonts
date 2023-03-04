@@ -22,7 +22,7 @@ export default function Example() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="absolute md:w-[5.5rem] w-36 -left-2 md:mt-2 mt-4 z-10 default-bg default-border focus:outline-none select-none">
+                <Menu.Items className="absolute md:w-[5.5rem] w-32 -left-2 md:mt-2 mt-4 z-10 default-bg default-border focus:outline-none select-none">
                     <div className="md:p-2 p-4 flex flex-col items-start md:gap-2 gap-4">
                         <Menu.Item>
                             {({ active }) => (
