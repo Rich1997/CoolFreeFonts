@@ -155,8 +155,8 @@
     @apply text-base font-bold leading-3 tracking-tight;
 }
 
-.h5-zoom {
-    @apply md:text-xs text-xl;
+.h5-menu {
+    @apply dark:text-tertiary-dark text-tertiary-light md:text-xs text-xl;
 }
 
 .sm-mobile-flex {
