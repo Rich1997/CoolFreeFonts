@@ -1,3 +1,9 @@
+export const colorThemeOptions = [
+    { option: 'Default' },
+    { option: 'Rose' },
+    { option: 'Sky' },
+];
+
 export const colorThemes = {
     base: {
         primaryLight: '#f0f0f0',

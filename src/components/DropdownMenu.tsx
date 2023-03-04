@@ -6,6 +6,7 @@ function classNames(...classes: (string | undefined)[]) {
 }
 
 export default function Example() {
+    const op = localStorage.getItem('homeSelection');
     return (
         <Menu as="div" className="relative inline-block text-left">
             <Menu.Button
