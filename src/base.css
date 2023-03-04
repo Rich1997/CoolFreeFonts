@@ -123,6 +123,10 @@
     @apply border-l dark:border-secondary-dark border-secondary-light;
 }
 
+.custom-border {
+    @apply border dark:border-primary-light border-primary-dark;
+}
+
 .default-hover {
     @apply dark:hover:bg-primary-light dark:hover:text-primary-dark hover:bg-primary-dark hover:text-primary-light;
 }
@@ -131,12 +135,16 @@
     @apply -mr-px hover:-mb-px hover:border-b dark:hover:border-b-primary-light hover:border-b-primary-dark hover:relative;
 }
 
+.h3 {
+    @apply font-bold text-lg leading-3 tracking-tight;
+}
+
 .h4 {
-    @apply font-bold text-2xl leading-3 tracking-tight;
+    @apply font-bold text-base tracking-tight;
 }
 
 .h5 {
-    @apply font-medium;
+    @apply font-medium text-xs;
 }
 
 .h5-bold {

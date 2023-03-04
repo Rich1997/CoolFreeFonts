@@ -5,7 +5,7 @@ const Navbar = () => {
         <nav className="md:px-12 px-6 w-full default-bg default-text default-border-b">
             <div className="md:p-0 py-6 div flex gap-8 items-center justify-between mx-auto">
                 <Logo size={24} />
-                <div className="items-center justify-center h5 md-mobile-flex">
+                <div className="items-center justify-center h4 md-mobile-flex">
                     <div className="p-8 default-border-x cursor-pointer hover-nav-element">
                         Gallery
                     </div>

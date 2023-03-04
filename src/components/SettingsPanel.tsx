@@ -4,6 +4,7 @@ import { useTheme, Theme } from '../context/ThemeContext';
 import { useSettings } from '../context/SettingsContext';
 import CircleHalfStroke from '../assets/images/icons/CircleHalfStroke';
 import { colorThemes } from '../utils/colorThemes';
+import DropdownMenu from './DropdownMenu';
 
 const getColorTheme = (key: string, init: string) => {
     const res = window.localStorage.getItem(key);
@@ -136,16 +137,19 @@ const SettingsPanel = () => {
                             style={getStyles(settings.fontSize, 12, 280)}
                         />
                     </div>
-                    <button
-                        type="button"
-                        onClick={() =>
-                            setTheme(
-                                theme === 'dark' ? Theme.light : Theme.dark
-                            )
-                        }
-                    >
-                        <CircleHalfStroke size={18} />
-                    </button>
+                    <div className="flex gap-4 items-center">
+                        <DropdownMenu />
+                        <button
+                            type="button"
+                            onClick={() =>
+                                setTheme(
+                                    theme === 'dark' ? Theme.light : Theme.dark
+                                )
+                            }
+                        >
+                            <CircleHalfStroke size={18} />
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className={`${isSticky ? 'md:px-0' : 'md:px-12'} px-0`}>
