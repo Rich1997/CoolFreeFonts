@@ -10,7 +10,7 @@ export default function Example() {
         <Menu as="div" className="relative inline-block text-left">
             <Menu.Button
                 as="div"
-                className="h-[16px] w-[16px] rounded-full bg-primary-light custom-border cursor-pointer"
+                className="md:h-[16px] md:w-[16px] h-8 w-8 rounded-full bg-primary-light custom-border cursor-pointer"
             ></Menu.Button>
             <Transition
                 as={Fragment}
@@ -21,20 +21,20 @@ export default function Example() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="absolute w-[5.5rem] -left-2 mt-2 z-10 default-bg default-border focus:outline-none select-none">
-                    <div className="p-2 flex flex-col items-start gap-2">
+                <Menu.Items className="absolute md:w-[5.5rem] w-48 -left-2 md:mt-2 mt-4 z-10 default-bg default-border focus:outline-none select-none">
+                    <div className="md:p-2 p-4 flex flex-col items-start md:gap-2 gap-4">
                         <Menu.Item>
                             {({ active }) => (
                                 <button
                                     className={classNames(
                                         active ? 'h5-bold' : '',
-                                        'h5 flex items-center gap-2'
+                                        'h5-zoom flex items-center md:gap-2 gap-4'
                                     )}
                                 >
                                     <div
                                         className={classNames(
                                             active ? '' : 'default-text',
-                                            'block h-[16px] w-[16px] rounded-full bg-primary-light custom-border cursor-pointer z-20'
+                                            'block md:h-[16px] md:w-[16px] h-8 w-8 rounded-full bg-primary-light custom-border cursor-pointer z-20'
                                         )}
                                     ></div>
                                     Default
@@ -46,13 +46,13 @@ export default function Example() {
                                 <button
                                     className={classNames(
                                         active ? 'h5-bold' : '',
-                                        'h5 flex items-center gap-2'
+                                        'h5-zoom flex items-center md:gap-2 gap-4'
                                     )}
                                 >
                                     <div
                                         className={classNames(
                                             active ? '' : 'default-text',
-                                            'block h-[16px] w-[16px] rounded-full bg-primary-light custom-border cursor-pointer z-20'
+                                            'block md:h-[16px] md:w-[16px] h-8 w-8 rounded-full bg-primary-light custom-border cursor-pointer z-20'
                                         )}
                                     ></div>
                                     Rose
@@ -64,13 +64,13 @@ export default function Example() {
                                 <button
                                     className={classNames(
                                         active ? 'h5-bold' : '',
-                                        'h5 flex items-center gap-2'
+                                        'h5-zoom flex items-center md:gap-2 gap-4'
                                     )}
                                 >
                                     <div
                                         className={classNames(
                                             active ? '' : 'default-text',
-                                            'block h-[16px] w-[16px] rounded-full bg-primary-light custom-border cursor-pointer z-20'
+                                            'block md:h-[16px] md:w-[16px] h-8 w-8 rounded-full bg-primary-light custom-border cursor-pointer z-20'
                                         )}
                                     ></div>
                                     Sky
