@@ -26,9 +26,13 @@ body {
     width: 100%;
 }
 
-/* .default-bg {
-  @apply dark:bg-gradient-to-bl from-gray-900 via-purple-900 to-violet-600;
-} */
+[data-color-scheme='dark'] {
+    color-scheme: dark;
+}
+
+[data-color-scheme='light'] {
+    color-scheme: light;
+}
 
 @font-face {
     font-family: 'Rubik';

@@ -23,7 +23,7 @@ const SettingsPanel = () => {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setIsSticky(entry.isIntersecting ? false : true);
+                setIsSticky(entry.intersectionRatio < 1 ? true : false);
             },
             {
                 root: null,

@@ -2,9 +2,11 @@ import Navbar from './components/Navbar';
 import Sampler from './components/Sampler';
 import SettingsPanel from './components/SettingsPanel';
 import { useTheme } from './context/ThemeContext';
+import scrollbarThemeController from './utils/scrollbarThemeController';
 
 function App() {
     const { theme } = useTheme();
+    scrollbarThemeController(theme);
     return (
         <div className={`${theme}`}>
             <div className="default-bg default-text w-full min-h-screen h-full">
