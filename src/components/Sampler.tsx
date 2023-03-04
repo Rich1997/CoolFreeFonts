@@ -2,8 +2,8 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import FontSize from '../assets/images/icons/FontSize';
 import FontWeight from '../assets/images/icons/FontWeight';
 import LetterSpacing from '../assets/images/icons/LetterSpacing';
-import { useSettings } from '../config/context/SettingsContext';
-import { useTheme, Theme } from '../config/context/ThemeContext';
+import { useSettings } from '../context/SettingsContext';
+import { useTheme, Theme } from '../context/ThemeContext';
 import RangeInput from './RangeInput';
 
 const Sampler = (props: {
