@@ -23,13 +23,13 @@ export default function Example() {
                 leaveTo="transform opacity-0 scale-95"
             >
                 <Menu.Items className="absolute md:w-[5.5rem] w-32 -left-2 md:mt-2 mt-4 z-10 default-bg default-border focus:outline-none select-none">
-                    <div className="md:p-2 p-4 flex flex-col items-start md:gap-2 gap-4">
+                    <div className="md:p-2 p-4 flex flex-col items-start md:gap-2 gap-4 h5-menu">
                         <Menu.Item>
                             {({ active }) => (
                                 <button
                                     className={classNames(
-                                        active ? 'h5-bold' : '',
-                                        'h5-menu flex items-center md:gap-2 gap-4'
+                                        active ? 'default-text' : '',
+                                        'flex items-center md:gap-2 gap-4'
                                     )}
                                 >
                                     <div
@@ -46,8 +46,8 @@ export default function Example() {
                             {({ active }) => (
                                 <button
                                     className={classNames(
-                                        active ? 'h5-bold' : '',
-                                        'h5-menu flex items-center md:gap-2 gap-4'
+                                        active ? 'default-text' : '',
+                                        'flex items-center md:gap-2 gap-4'
                                     )}
                                 >
                                     <div
@@ -64,8 +64,8 @@ export default function Example() {
                             {({ active }) => (
                                 <button
                                     className={classNames(
-                                        active ? 'h5-bold' : '',
-                                        'h5-menu flex items-center md:gap-2 gap-4'
+                                        active ? 'default-text' : '',
+                                        'flex items-center md:gap-2 gap-4'
                                     )}
                                 >
                                     <div

@@ -11,7 +11,7 @@ export const colorThemes = {
         secondaryLight: '#dbdbdb',
         secondaryDark: '#313131',
         tertiaryLight: '#8b8b8b',
-        tertiaryDark: '#6e6e6e',
+        tertiaryDark: '#888888',
     },
     rose: {
         primaryLight: '#ffeeee',
@@ -19,7 +19,7 @@ export const colorThemes = {
         secondaryLight: '#e5d4d4',
         secondaryDark: '#313131',
         tertiaryLight: '#8b8b8b',
-        tertiaryDark: '#6e6e6e',
+        tertiaryDark: '#888888',
     },
     sky: {
         primaryLight: '#cff8ff',
@@ -27,6 +27,6 @@ export const colorThemes = {
         secondaryLight: '#bacdce',
         secondaryDark: '#313131',
         tertiaryLight: '#8b8b8b',
-        tertiaryDark: '#6e6e6e',
+        tertiaryDark: '#888888',
     },
 };
