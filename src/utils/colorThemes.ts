@@ -1,11 +1,11 @@
 export const colorThemesList = [
-    { colorTheme: 'Default', primaryColor: '#f0f0f0' },
-    { colorTheme: 'Rose', primaryColor: '#ffeeee' },
-    { colorTheme: 'Sky', primaryColor: '#cff8ff' },
+    { colorTheme: 'default', primaryColor: '#f0f0f0' },
+    { colorTheme: 'rose', primaryColor: '#ffeeee' },
+    { colorTheme: 'sky', primaryColor: '#cff8ff' },
 ];
 
-export const colorThemes = {
-    base: {
+export const themeColors = {
+    default: {
         primaryLight: '#f0f0f0',
         primaryDark: '#101010',
         secondaryLight: '#dbdbdb',

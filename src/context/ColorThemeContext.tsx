@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 
-enum colorThemes {
-    default = 'Default',
+export enum colorThemes {
+    default = 'default',
     rose = 'rose',
     sky = 'sky',
 }
@@ -13,26 +13,26 @@ export type colorThemeType = {
 
 export type ColorThemeContextType = {
     color: colorThemes;
-    setTheme: (colorTheme: colorThemes) => void;
+    setColor: (colorTheme: colorThemes) => void;
 };
 
 export const ColorThemeContext = createContext<ColorThemeContextType>({
     color: colorThemes.default,
-    setTheme: (color: colorThemes) => {},
+    setColor: (color: colorThemes) => {},
 });
 
 export const useColorTheme = () => useContext(ColorThemeContext);
 
 export const ColorThemeProvider = (props: { children: ReactNode }) => {
     const [colorTheme, setColorTheme] = useState(
-        localStorage.getItem('colorTheme') !== null
-            ? (localStorage.getItem('colorTheme') as colorThemes)
+        localStorage.getItem('homeSelection') !== null
+            ? (localStorage.getItem('homeSelection') as colorThemes)
             : colorThemes.default
     );
 
     return (
         <ColorThemeContext.Provider
-            value={{ color: colorTheme, setTheme: setColorTheme }}
+            value={{ color: colorTheme, setColor: setColorTheme }}
         >
             {props.children}
         </ColorThemeContext.Provider>

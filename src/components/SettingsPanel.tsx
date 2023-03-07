@@ -3,19 +3,10 @@ import RangeInput from './RangeInput';
 import { useTheme, Theme } from '../context/ThemeContext';
 import { useSettings } from '../context/SettingsContext';
 import CircleHalfStroke from '../assets/images/icons/CircleHalfStroke';
-import { colorThemes } from '../utils/colorThemes';
 import DropdownMenu from './DropdownMenu';
 import Dropdown from './Dropdown';
 
-const getColorTheme = (key: string, init: string) => {
-    const res = window.localStorage.getItem(key);
-    return res === null ? (init as 'base' | 'rose') : (res as 'base' | 'rose');
-};
-
 const SettingsPanel = () => {
-    const [colorTheme, setColorTheme] = useState<'base' | 'rose'>(
-        getColorTheme('colorTheme', 'base')
-    );
     const { theme, setTheme } = useTheme();
     const { settings, setSize } = useSettings();
     const ref = useRef<HTMLDivElement>(null);
@@ -43,35 +34,6 @@ const SettingsPanel = () => {
             }
         };
     }, [ref]);
-
-    useEffect(() => {
-        window.localStorage.setItem('colorTheme', colorTheme);
-        const root = document.documentElement;
-        root.style.setProperty(
-            '--primary-light',
-            colorThemes[colorTheme].primaryLight
-        );
-        root.style.setProperty(
-            '--primary-dark',
-            colorThemes[colorTheme].primaryDark
-        );
-        root.style.setProperty(
-            '--secondary-light',
-            colorThemes[colorTheme].secondaryLight
-        );
-        root.style.setProperty(
-            '--secondary-dark',
-            colorThemes[colorTheme].secondaryDark
-        );
-        root.style.setProperty(
-            '--tertiary-light',
-            colorThemes[colorTheme].tertiaryLight
-        );
-        root.style.setProperty(
-            '--tertiary-dark',
-            colorThemes[colorTheme].tertiaryDark
-        );
-    }, [colorTheme]);
 
     function toggleState(ifTrue: string, ifFalse: string) {
         if (theme === 'dark') return ifTrue;
@@ -112,15 +74,6 @@ const SettingsPanel = () => {
                         <div className="flex w-14 justify-end">
                             {settings.fontSize}
                         </div>
-                        <button
-                            onClick={() =>
-                                setColorTheme(() =>
-                                    colorTheme === 'rose' ? 'base' : 'rose'
-                                )
-                            }
-                        >
-                            check
-                        </button>
                         <RangeInput
                             width="w-96"
                             className={`${toggleState(
@@ -140,7 +93,6 @@ const SettingsPanel = () => {
                     </div>
                     <div className="flex gap-4 items-center">
                         <Dropdown />
-                        <DropdownMenu />
                         <button
                             type="button"
                             onClick={() =>

@@ -1,20 +1,48 @@
-import { Fragment, useState } from 'react';
-import { Listbox, Menu, Transition } from '@headlessui/react';
-import { colorThemes, colorThemesList } from '../utils/colorThemes';
-
-function classNames(...classes: (string | undefined)[]) {
-    return classes.filter(Boolean).join(' ');
-}
+import { useEffect, useState } from 'react';
+import { Listbox, Transition } from '@headlessui/react';
+import { themeColors, colorThemesList } from '../utils/colorThemes';
+import { colorThemes, useColorTheme } from '../context/ColorThemeContext';
 
 export default function Example() {
     const op = localStorage.getItem('homeSelection');
     const [selected, setSelected] = useState(
-        op === 'System'
+        op === 'default'
             ? colorThemesList[0]
-            : op === 'Light'
+            : op === 'rose'
             ? colorThemesList[1]
             : colorThemesList[2]
     );
+
+    const { color, setColor } = useColorTheme();
+
+    useEffect(() => {
+        window.localStorage.setItem('homeSelection', color);
+        const root = document.documentElement;
+        root.style.setProperty(
+            '--primary-light',
+            themeColors[color].primaryLight
+        );
+        root.style.setProperty(
+            '--primary-dark',
+            themeColors[color].primaryDark
+        );
+        root.style.setProperty(
+            '--secondary-light',
+            themeColors[color].secondaryLight
+        );
+        root.style.setProperty(
+            '--secondary-dark',
+            themeColors[color].secondaryDark
+        );
+        root.style.setProperty(
+            '--tertiary-light',
+            themeColors[color].tertiaryLight
+        );
+        root.style.setProperty(
+            '--tertiary-dark',
+            themeColors[color].tertiaryDark
+        );
+    }, [color]);
 
     return (
         <Listbox value={selected} onChange={setSelected}>
@@ -36,22 +64,37 @@ export default function Example() {
                                 key={themeOptionId}
                                 className={`h5-menu`}
                                 value={themeOption}
-                                onClick={() => {}}
+                                onClick={() => {
+                                    setColor(
+                                        themeOption.colorTheme.toLocaleLowerCase() as colorThemes
+                                    );
+                                }}
                             >
                                 {({ selected, active }) => (
                                     <>
                                         <button
-                                            className={`flex items-center gap-2 ${
-                                                selected ? 'font-bold' : ''
+                                            className={`flex items-center md:gap-2 gap-4 ${
+                                                selected
+                                                    ? 'font-bold default-text'
+                                                    : ''
                                             } ${active ? 'default-text' : ''}`}
                                         >
                                             <div
-                                                className="block md:h-[16px] md:w-[16px] h-4 w-4 rounded-full custom-border cursor-pointer z-20"
+                                                className="flex items-center justify-center md:h-[16px] md:w-[16px] h-4 w-4 rounded-full custom-border cursor-pointer z-20"
                                                 style={{
                                                     backgroundColor: `${themeOption.primaryColor}`,
                                                 }}
-                                            ></div>
-                                            {themeOption.colorTheme}
+                                            >
+                                                {selected ? (
+                                                    <div className="w-2 h-2 rounded-full bg-primary-dark"></div>
+                                                ) : (
+                                                    ''
+                                                )}
+                                            </div>
+                                            {themeOption.colorTheme
+                                                .charAt(0)
+                                                .toLocaleUpperCase() +
+                                                themeOption.colorTheme.slice(1)}
                                         </button>
                                         {selected
                                             ? localStorage.setItem(
@@ -59,9 +102,6 @@ export default function Example() {
                                                   themeOption.colorTheme
                                               )
                                             : ''}
-                                        {/* {selected ? (
-                                      <span className="absolute inset-y-0 left-0 flex items-center pl-3"></span>
-                                  ) : null} */}
                                     </>
                                 )}
                             </Listbox.Option>
