@@ -19,7 +19,7 @@ export type SettingsContextType = {
 
 const SettingsContext = createContext<SettingsContextType>({
     settings: Settings,
-    setSize: (size: string) => console.warn('no theme provider'),
+    setSize: (size: string) => {},
 });
 
 export const useSettings = () => useContext(SettingsContext);
