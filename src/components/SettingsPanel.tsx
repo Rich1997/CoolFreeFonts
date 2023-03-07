@@ -3,7 +3,6 @@ import RangeInput from './RangeInput';
 import { useTheme, Theme } from '../context/ThemeContext';
 import { useSettings } from '../context/SettingsContext';
 import CircleHalfStroke from '../assets/images/icons/CircleHalfStroke';
-import DropdownMenu from './DropdownMenu';
 import Dropdown from './Dropdown';
 
 const SettingsPanel = () => {
@@ -95,12 +94,11 @@ const SettingsPanel = () => {
                         <Dropdown />
                         <button
                             type="button"
-                            onClick={() => {
+                            onClick={() =>
                                 setTheme(
                                     theme === 'dark' ? Theme.light : Theme.dark
-                                );
-                                localStorage.setItem('theme', theme);
-                            }}
+                                )
+                            }
                         >
                             <CircleHalfStroke size={18} />
                         </button>
