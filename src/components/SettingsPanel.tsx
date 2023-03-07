@@ -95,11 +95,12 @@ const SettingsPanel = () => {
                         <Dropdown />
                         <button
                             type="button"
-                            onClick={() =>
+                            onClick={() => {
                                 setTheme(
                                     theme === 'dark' ? Theme.light : Theme.dark
-                                )
-                            }
+                                );
+                                localStorage.setItem('theme', theme);
+                            }}
                         >
                             <CircleHalfStroke size={18} />
                         </button>
