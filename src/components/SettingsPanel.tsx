@@ -5,6 +5,7 @@ import { useSettings } from '../context/SettingsContext';
 import CircleHalfStroke from '../assets/images/icons/CircleHalfStroke';
 import { colorThemes } from '../utils/colorThemes';
 import DropdownMenu from './DropdownMenu';
+import Dropdown from './Dropdown';
 
 const getColorTheme = (key: string, init: string) => {
     const res = window.localStorage.getItem(key);
@@ -138,6 +139,7 @@ const SettingsPanel = () => {
                         />
                     </div>
                     <div className="flex gap-4 items-center">
+                        <Dropdown />
                         <DropdownMenu />
                         <button
                             type="button"
