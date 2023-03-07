@@ -80,7 +80,7 @@ export default function Example() {
                                             } ${active ? 'default-text' : ''}`}
                                         >
                                             <div
-                                                className="flex items-center justify-center md:h-[16px] md:w-[16px] h-4 w-4 rounded-full custom-border cursor-pointer z-20"
+                                                className="flex items-center justify-center md:h-[16px] md:w-[16px] h-4 w-4 rounded-full border dark:border-white border-primary-dark cursor-pointer z-20"
                                                 style={{
                                                     backgroundColor: `${themeOption.primaryColor}`,
                                                 }}
