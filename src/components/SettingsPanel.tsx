@@ -11,6 +11,8 @@ const SettingsPanel = () => {
     const ref = useRef<HTMLDivElement>(null);
     const [isSticky, setIsSticky] = useState(false);
 
+    useEffect(() => localStorage.setItem('theme', theme), [theme]);
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {

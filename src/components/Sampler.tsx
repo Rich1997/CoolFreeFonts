@@ -33,7 +33,7 @@ const Sampler = (props: {
     }, [settings]);
 
     function toggleState(ifTrue: string, ifFalse: string) {
-        if (toggle === 'darkdark' || toggle === 'lightlight') return ifTrue;
+        if (toggle === 'darkdark' || toggle === 'lightdark') return ifTrue;
         else return ifFalse;
     }
 
@@ -50,13 +50,11 @@ const Sampler = (props: {
     const getStyles = (value: any, min: number, max: number) => {
         return {
             backgroundImage:
-                (theme === Theme.light && mode === Theme.light) ||
-                (theme === Theme.dark && mode === Theme.dark)
+                toggle === 'darkdark' || toggle === 'lightdark'
                     ? 'linear-gradient(var(--primary-light), var(--primary-light))'
                     : 'linear-gradient(var(--primary-dark), var(--primary-dark))',
             backgroundColor:
-                (theme === Theme.light && mode === Theme.light) ||
-                (theme === Theme.dark && mode === Theme.dark)
+                toggle === 'darkdark' || toggle === 'lightdark'
                     ? 'var(--secondary-dark)'
                     : 'var(--secondary-light)',
             backgroundRepeat: 'no-repeat',
@@ -169,7 +167,7 @@ const Sampler = (props: {
                             'text-primary-dark'
                         )}`}
                         disabled={
-                            toggle === 'lightdark' || toggle === 'darklight'
+                            toggle === 'lightlight' || toggle === 'darklight'
                                 ? true
                                 : false
                         }
@@ -185,9 +183,9 @@ const Sampler = (props: {
                             'text-tertiary-light'
                         )}`}
                         disabled={
-                            toggle === 'lightdark' || toggle === 'darklight'
-                                ? false
-                                : true
+                            toggle === 'lightdark' || toggle === 'darkdark'
+                                ? true
+                                : false
                         }
                         onClick={() =>
                             setMode(mode === 'dark' ? Theme.light : Theme.dark)
