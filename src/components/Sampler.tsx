@@ -24,6 +24,7 @@ const Sampler = (props: {
 
     const [toggle, setToggle] = useState(theme + mode);
 
+    useEffect(() => setMode(theme), [theme]);
     useEffect(() => {
         setToggle(theme + mode);
     }, [theme, mode]);
@@ -67,7 +68,7 @@ const Sampler = (props: {
     return (
         <div
             className={`md:p-12 p-6 -mb-[1px] ${
-                mode === 'dark'
+                toggle === 'lightlight' || toggle === 'darkdark'
                     ? 'default-outline default-bg default-text'
                     : 'default-selected'
             }`}
@@ -197,7 +198,7 @@ const Sampler = (props: {
             </div>
             <div
                 className={`md-mobile-block w-full min-h-fit h-full overflow-hidden py-8 bg-transparent default-text focus:outline-none break-all ${
-                    mode === 'dark'
+                    toggle === 'lightlight' || toggle === 'darkdark'
                         ? 'default-bg default-text'
                         : 'bg-alt text-alt'
                 } ${toggleState('caret-zinc-400', 'caret-zinc-800')}`}
@@ -206,11 +207,12 @@ const Sampler = (props: {
                 suppressContentEditableWarning={true}
                 spellCheck={false}
             >
-                {props.font}
+                {/* {props.font} */}
+                {toggle}
             </div>
             <div
                 className={`py-4 text-md md-mobile-block-reverse w-full min-h-fit h-full overflow-hidden bg-transparent default-text focus:outline-none break-all ${
-                    mode === 'dark'
+                    toggle === 'lightlight' || toggle === 'darkdark'
                         ? 'default-bg default-text'
                         : 'bg-alt text-alt'
                 } ${toggleState('caret-zinc-400', 'caret-zinc-800')}`}
