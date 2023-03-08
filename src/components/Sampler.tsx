@@ -216,6 +216,7 @@ const Sampler = (props: {
                         ? 'default-bg default-text'
                         : 'bg-alt text-alt'
                 } ${toggleState('caret-zinc-400', 'caret-zinc-800')}`}
+                style={{ fontFamily: props.font }}
                 contentEditable
                 suppressContentEditableWarning={true}
                 spellCheck={false}
